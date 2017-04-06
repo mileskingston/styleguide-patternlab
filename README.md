@@ -1,4 +1,6 @@
-# Pattern Lab Node - Gulp Edition
+# My styleguide using Patternlab Gulp Edition
+
+## Pattern Lab Node - Gulp Edition
 
 The Gulp wrapper around [Pattern Lab Node Core](https://github.com/pattern-lab/patternlab-node) providing tasks to interact with the core library and move supporting frontend assets.
 
