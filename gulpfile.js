@@ -7,7 +7,9 @@ var gulp = require('gulp'),
   path = require('path'),
   browserSync = require('browser-sync').create(),
   argv = require('minimist')(process.argv.slice(2)),
-  chalk = require('chalk');
+  chalk = require('chalk'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer');
 
 /**
  * Normalize all paths to be plain, paths with no leading './',
@@ -28,6 +30,21 @@ function normalizePath() {
     )
     .replace(/\\/g, "/");
 }
+
+// Gulp sass
+gulp.task('pl-sass', function() {
+  console.log(normalizePath(paths().source.css));
+  return gulp.src('**/*.scss', {cwd: normalizePath(paths().source.css)})
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({cascade: false},{browsers: ['last 5 versions', '> 3%']}))
+    // .pipe(gulp.dest(normalizePath(paths().public.css)));
+    .pipe(gulp.dest(function(file){
+      // flatten anything inside the styleguide into a single output dir per http://stackoverflow.com/a/34317320/1790362
+      file.path = path.join(file.base, path.basename(file.path));
+      return normalizePath(path.join(paths().source.css));
+    }));
+});
+
 
 /******************************************************
  * COPY TASKS - stream assets from source to destination
@@ -119,7 +136,7 @@ gulp.task('pl-assets', gulp.series(
   'pl-copy:img',
   'pl-copy:favicon',
   'pl-copy:font',
-  'pl-copy:css',
+  gulp.series('pl-sass', 'pl-copy:css', function(done){done();}),
   'pl-copy:styleguide',
   'pl-copy:styleguide-css'
 ));
@@ -194,6 +211,12 @@ function watch() {
       paths: [normalizePath(paths().source.css, '**', '*.css')],
       config: { awaitWriteFinish: true },
       tasks: gulp.series('pl-copy:css', reloadCSS)
+    },
+    {
+      name: 'SASS',
+      paths: [normalizePath(paths().source.css, '**', '*.scss')],
+      config: { awaitWriteFinish: true },
+      tasks: gulp.series('pl-sass', 'pl-copy:css', reloadCSS)
     },
     {
       name: 'Styleguide Files',

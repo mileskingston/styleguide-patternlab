@@ -369,8 +369,5 @@ template {
 [hidden] {
   display: none; }
 
-html {
-  font-size: 62.5%; }
-
 body {
-  font: normal 16px/1.5 "Source Sans Pro", Helvetica, Arial, sans-serif; }
+  background-color: pink; }

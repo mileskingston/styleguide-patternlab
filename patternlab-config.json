@@ -11,7 +11,7 @@
       "js" : "./source/js",
       "images" : "./source/images",
       "fonts" : "./source/fonts",
-      "css" : "./source/css/"
+      "css" : "./source/css"
     },
     "public" : {
       "root" : "./public/",
@@ -28,12 +28,12 @@
   "styleGuideExcludes": [
   ],
   "defaultPattern": "all",
-  "defaultShowPatternInfo": false,
+  "defaultShowPatternInfo": true,
   "cleanPublic" : true,
-  "patternExtension": "mustache",
-  "ignored-extensions" : ["scss", "DS_Store", "less"],
+  "patternExtension": "hbs",
+  "ignored-extensions" : ["DS_Store", "less"],
   "ignored-directories" : ["scss"],
-  "debug": true,
+  "debug": false,
   "ishControlsHide": {
     "s": true,
     "m": true,
