@@ -37,7 +37,6 @@ gulp.task('pl-sass', function() {
   return gulp.src('**/*.scss', {cwd: normalizePath(paths().source.css)})
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({cascade: false},{browsers: ['last 5 versions', '> 3%']}))
-    // .pipe(gulp.dest(normalizePath(paths().public.css)));
     .pipe(gulp.dest(function(file){
       // flatten anything inside the styleguide into a single output dir per http://stackoverflow.com/a/34317320/1790362
       file.path = path.join(file.base, path.basename(file.path));

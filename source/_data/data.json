@@ -3,8 +3,12 @@
   "key2": "use this for variables you want to load globally",
   "title": "Nullizzle shizznit velizzle, hizzle, suscipit own yo', gravida vizzle, arcu.",
   "img": {
+    "logo": {
+      "src": "",
+      "alt": "Logo"
+    },
     "avatar": {
-      "src": "http://placeimg.com/100/100/people",
+      "src": "../../images/avatar.svg",
       "alt": "Avatar"
     },
     "square": {
@@ -27,6 +31,17 @@
   "headline": {
     "short": "Lorizzle pimpin' dolizzle sit amet I",
     "medium": "Rizzle adipiscing elizzle. Nullam sapien velizzle, shit volutpizzle, my"
+  },
+  "headings": {
+    "title": "Heading",
+    "heading": {
+      "1": "Level 1",
+      "2": "Level 2",
+      "3": "Level 3",
+      "4": "Level 4",
+      "5": "Level 5",
+      "6": "Level 6"
+    }
   },
   "excerpt": {
     "short": "Shizz fo shizzle mah nizzle fo rizzle, mah home g-dizzle, gravida vizzle, arcu. Pellentesque crunk tortizzle. Sed erizzle. Black izzle sheezy telliv.",

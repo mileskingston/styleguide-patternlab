@@ -1,0 +1,5 @@
+{{#if headings.heading}}
+	{{~#each headings.heading~}}
+		<h{{@key}}>{{{@root.headings.title}}} {{{this}}}</h{{@key}}>
+	{{~/each~}}
+{{/if}}

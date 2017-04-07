@@ -3,9 +3,7 @@
   font-size: $sizeValue + rem;
 }
 
-// font: font-style font-variant font-weight font-size/line-height font-family;
-// font: italic small-caps normal 13px/150% Arial, Helvetica, sans-serif;
-
+/* Font shorthand */
 @mixin font(
 	$style: false, 
 	$weight: $font-weight-normal, 
@@ -18,11 +16,12 @@
 	@else { font: $style $weight $size $family; }
 }
 
+/* Media queries */
 $breakpoints: (
-  'phone':   			480px,
-  'tablet':       768px,
-  'tablet-wide':  1024px,
-	'desktop':      1200px
+  'mobile': 480px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+	'desktop': 1200px
 );
 
 @mixin mq($width, $type: min) {

@@ -25,13 +25,15 @@
   flex-wrap: wrap;
   list-style: none !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 0 -0.2rem;
 }
+
 .sg-colors li {
   -webkit-box-flex: 1;
-  flex: auto;
+  flex: 1;
+  flex-wrap: wrap;
   padding: 0.3em;
-  margin: 0 0.5em 0.5em 0;
+  margin: 0.2rem;
   min-width: 5em;
   max-width: 14em;
   border: 1px solid #ddd;
@@ -46,6 +48,18 @@
 }
 
 .sg-label {
-  font-size: 90%;
-  line-height: 1;
+  @include font-size(1.1);
+}
+
+
+/* Updates */
+
+.sg-tabs-list li:first-child {
+  display: none;
+}
+
+.sg-pattern-desc p,
+.sg-tabs-list li a,
+.sg-pattern-extra-code code {
+  @include font-size(1.1);
 }
